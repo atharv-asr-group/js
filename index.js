@@ -1,11 +1,9 @@
-var counter =1;
-function printCounter(){
-    console.log(counter);
-    counter++;
-}
-setInterval(printCounter, 1000);
-var counter2=1;
-for(var i=0;i<1000;i++){
-    counter2++;
-}
-console.log(counter2);
+setTimeout(function(){
+    console.log('1st')
+    setTimeout(function(){
+        console.log('3rd')
+    },2000);
+},1000);
+setTimeout(function(){
+    console.log('2nd')
+},2000);
