@@ -18,6 +18,11 @@ function handleFirstRequest(req,res){
     const answer='the answer is '+calculatedSum
     res.send(answer);
 }
+function handleSecondRequest(req,res){
+    res.send('hi ');
+}
+app.post('/createUser',handleSecondRequest)
+
 // if we get a request at /, send the control to handlefirstRequest function.
 app.get('/',handleFirstRequest)
 function started(){
