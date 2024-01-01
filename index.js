@@ -17,7 +17,13 @@ function calculateSum(counter){
 
 function handleFirstRequest(req,res){
     
-    res.sendFile(__dirname+'/index.html');
+    const counter=req.body.counter;
+    var calculatedSum=calculateSum(counter);
+    var answerObject={
+        sum: calculatedSum,
+        counter
+    }
+    res.send(answerObject);
 }
 
 // if we get a request at /, send the control to handlefirstRequest function.
