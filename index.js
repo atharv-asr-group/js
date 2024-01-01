@@ -17,18 +17,11 @@ function calculateSum(counter){
 
 function handleFirstRequest(req,res){
     
-    const counter=req.body.counter;
-    console.log(counter);
-    var calculatedSum=calculateSum(counter);
-    var answerObject={
-        sum: calculatedSum,
-        counter
-    }
-    res.send(answerObject);
+    res.sendFile(__dirname+'/index.html');
 }
 
 // if we get a request at /, send the control to handlefirstRequest function.
-app.post('/',handleFirstRequest)
+app.get('/',handleFirstRequest)
 function started(){
     console.log('example hosted on port 3000')
 }
