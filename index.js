@@ -11,7 +11,7 @@ function calculateSum(counter){
 }
 
 function handleFirstRequest(req,res){
-    const counter=req.query.counter;
+    const counter=req.headers.counter;
 
     var calculatedSum=calculateSum(counter);
     console.log(calculatedSum);
@@ -21,7 +21,7 @@ function handleFirstRequest(req,res){
 function handleSecondRequest(req,res){
     res.send('hi ');
 }
-app.post('/createUser',handleSecondRequest)
+app.post('/createUser',handleFirstRequest)
 
 // if we get a request at /, send the control to handlefirstRequest function.
 app.get('/',handleFirstRequest)
