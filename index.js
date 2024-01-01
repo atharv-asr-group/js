@@ -11,7 +11,9 @@ function calculateSum(counter){
 }
 
 function handleFirstRequest(req,res){
-    var calculatedSum=calculateSum(100);
+    const counter=req.query.counter;
+
+    var calculatedSum=calculateSum(counter);
     console.log(calculatedSum);
     const answer='the answer is '+calculatedSum
     res.send(answer);
