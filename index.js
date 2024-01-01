@@ -2,6 +2,11 @@ const express= require('express');
 const app= express();
 const port=3000;
 
+function middleware1(req,res,next){
+    console.log('from inside middleware '+req.headers.counter);
+    next();
+}
+app.use(middleware1);
 function calculateSum(counter){
     var sum=0;
     for(var i=0;i<counter;i++){
@@ -18,13 +23,9 @@ function handleFirstRequest(req,res){
     const answer='the answer is '+calculatedSum
     res.send(answer);
 }
-function handleSecondRequest(req,res){
-    res.send('hi ');
-}
-app.post('/createUser',handleFirstRequest)
 
 // if we get a request at /, send the control to handlefirstRequest function.
-app.get('/',handleFirstRequest)
+app.post('/',handleFirstRequest)
 function started(){
     console.log('example hosted on port 3000')
 }
