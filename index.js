@@ -1,12 +1,12 @@
 const express= require('express');
+const bodyParser=require('body-parser');
 const app= express();
 const port=3000;
+app.use(bodyParser.json());
 
-function middleware1(req,res,next){
-    console.log('from inside middleware '+req.headers.counter);
-    next();
-}
-app.use(middleware1);
+
+
+
 function calculateSum(counter){
     var sum=0;
     for(var i=0;i<counter;i++){
@@ -16,8 +16,10 @@ function calculateSum(counter){
 }
 
 function handleFirstRequest(req,res){
-    const counter=req.headers.counter;
-
+    const data=req.body;
+    console.log(data);
+    const counter=req.body.counter;
+    console.log(counter);
     var calculatedSum=calculateSum(counter);
     console.log(calculatedSum);
     const answer='the answer is '+calculatedSum
