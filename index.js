@@ -16,14 +16,15 @@ function calculateSum(counter){
 }
 
 function handleFirstRequest(req,res){
-    const data=req.body;
-    console.log(data);
+    
     const counter=req.body.counter;
     console.log(counter);
     var calculatedSum=calculateSum(counter);
-    console.log(calculatedSum);
-    const answer='the answer is '+calculatedSum
-    res.send(answer);
+    var answerObject={
+        sum: calculatedSum,
+        counter
+    }
+    res.send(answerObject);
 }
 
 // if we get a request at /, send the control to handlefirstRequest function.
