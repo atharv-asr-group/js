@@ -1,26 +1,18 @@
-interface Persongender{
-    gender:string,
-    orientation:string,
-    pronouns:string
+interface Circle{
+    radius:string
 }
-interface Person{
-    name:string,
-    age:number,
-    gender: Persongender
+interface Square{
+    side:string
 }
-function greet(person:Person){
-    return "hi "+person.name+" you are "+person.age+" years old. your gender is "+person.gender.pronouns;
+interface Rectangle{
+    width:string,
+    height:string
 }
-// function greet(person: {
-//     name:string,
-//     age:number;
-// }):string{return "hi "+person.name+" how are you congrats on being "+person.age+" years old"}
-console.log(greet({
-    name:"atharv",
-    age:20,
-    gender:{
-        gender:"male",
-        orientation:"straight",
-        pronouns:"he/him"
-    }
-}));
+type Shape=Circle|Square|Rectangle;
+
+function greet(shape:Shape){
+console.log('hi');
+}
+greet({
+    radius:"20"
+})
