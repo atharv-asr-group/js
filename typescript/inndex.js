@@ -1,6 +1,5 @@
-function greet(shape) {
-    console.log('hi');
+function getFirstElement(arr) {
+    return arr[0];
 }
-greet({
-    radius: "20"
-});
+console.log(getFirstElement(["hi", "why", "guy"]));
+console.log(getFirstElement([1, 2, 3]));

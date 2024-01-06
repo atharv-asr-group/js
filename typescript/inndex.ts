@@ -1,18 +1,7 @@
-interface Circle{
-    radius:string
-}
-interface Square{
-    side:string
-}
-interface Rectangle{
-    width:string,
-    height:string
-}
-type Shape=Circle|Square|Rectangle;
+type arr=string[]|number[];
+function getFirstElement(arr:arr):number|string{
+    return arr[0];
 
-function greet(shape:Shape){
-console.log('hi');
 }
-greet({
-    radius:"20"
-})
+console.log(getFirstElement(["hi","why","guy"]).toUpperCase());
+console.log(getFirstElement([1,2,3]))
