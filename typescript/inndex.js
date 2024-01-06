@@ -1,5 +1,5 @@
-function getFirstElement(arr) {
-    return arr[0];
+function swap(a, b) {
+    return [b, a];
 }
-console.log(getFirstElement(["hi", "why", "guy"]).toUpperCase());
-console.log(getFirstElement([1, 2, 3]));
+console.log(swap(1, 'bye'));
+console.log(swap(1, 2));

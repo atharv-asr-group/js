@@ -1,7 +1,5 @@
-
-function getFirstElement<T>(arr:T[]):T{
-    return arr[0];
-
+function swap<T,U>(a:T,b:U):[U,T]{
+    return [b,a];
 }
-console.log(getFirstElement(["hi","why","guy"]).toUpperCase());
-console.log(getFirstElement([1,2,3]))
+console.log(swap(1,'bye'));
+console.log(swap(1,2));
