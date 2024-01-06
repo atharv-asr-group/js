@@ -1,5 +1,5 @@
-type arr=string[]|number[];
-function getFirstElement(arr:arr):number|string{
+
+function getFirstElement<T>(arr:T[]):T{
     return arr[0];
 
 }
