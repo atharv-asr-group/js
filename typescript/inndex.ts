@@ -1,5 +1,11 @@
-function swap<T,U>(a:T,b:U):[U,T]{
-    return [b,a];
+type Todo={
+    title:string,
+    description:string,
+    done: boolean,
+    id:string
 }
-console.log(swap(1,'bye'));
-console.log(swap(1,2));
+type UpdateTodoInput=Partial<Todo>
+function updateTdo(id:string,newProps:UpdateTodoInput){
+
+}
+updateTdo("1",{done:true});
